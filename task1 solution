@@ -1,0 +1,136 @@
+//•Write a program that enters the diameter of the circle from the keyboard and prints the circumference of the circle.
+using System.ComponentModel;
+using System.Runtime.Intrinsics.X86;
+
+Console.WriteLine("Please enter the diameter of the circle ");
+string num = Console.ReadLine();
+double diameter = Convert.ToDouble(num);
+double circumference = Math.PI * diameter;
+Console.WriteLine($"The circumference of the circle is equal {circumference}, where diameter is equal {diameter}");
+//-----------------------------------------------------------------------------
+
+//Write a program that inputs time and distance from the keyboard and print the speed in meters per hour and kilometers per hour.
+
+Console.WriteLine("Please enter the time in hours: ");
+String number2 = Console.ReadLine();
+double time = Convert.ToDouble(number2);
+Console.WriteLine("please enter the distance in kilometers: ");
+String number3 = Console.ReadLine();
+double distance = Convert.ToDouble(number3);
+double speed_mph = distance / time;
+double speed_kph = speed_mph / 1000;
+
+Console.WriteLine($"The speed is {speed_mph} meter per hour, and {speed_kph} kilometer per hour. ");
+//-----------------------------------------------------------------------------
+
+
+//•What are the differences between Post Increment and Pre-Increment operators?
+//the difference is:
+int number = 1;
+Console.WriteLine(number++);
+//the result will be 1 but the real value of number is 2, because the (number++) allow print then increment. 
+//but if 
+int number1 = 1;
+Console.WriteLine(++number1);
+//the result will be 2 and the real value also 2, because (++number1) allow increment then print it. 
+//it is also applied on decrement (number--) and (--number);
+//-----------------------------------------------------------------------------
+
+//•Use Math.Round to round a double number to the nearest integer
+Console.WriteLine("Enter the number to round: ");
+string n = Console.ReadLine();
+double thenumber = Convert.ToDouble(n);
+Console.WriteLine($" the rounded number is: {Math.Round(thenumber)}");
+//-----------------------------------------------------------------------------
+
+//Use Math.Pow to calculate the result of baseNumberraised to the power of exponent
+Console.WriteLine("enter the base number ");
+string n1 = Console.ReadLine();
+double basenumber = Convert.ToDouble(n1);
+Console.WriteLine("enter the power: ");
+string n2 = Console.ReadLine();
+double powerof = Convert.ToDouble(n2);
+double result = Math.Pow(basenumber, powerof);
+Console.WriteLine($"the result of {basenumber} power of {powerof} is== {result}");
+
+//-----------------------------------------------------------------------------
+//•Write a program to check whether a year is a leap or not.
+Console.WriteLine("enter the year: ");
+string y = Console.ReadLine();
+int year = Convert.ToInt32(y);
+if (year % 4 == 0 && (year % 100 != 0 || year % 400==0))
+{
+    Console.WriteLine("it is leap");
+}
+else
+{
+    Console.WriteLine("it is not leap");
+}
+//-----------------------------------------------------------------------------
+
+//•Write program to Check whether an alphabet is lowercase or uppercase.
+Console.WriteLine("Enter the alphapet: ");
+string s = Console.ReadLine();
+char alpha = Convert.ToChar(s);
+if (alpha >= 65  && alpha <= 90)
+{
+    Console.WriteLine("uppercase");
+}
+else if(alpha >=97 &&  alpha <=122)
+{
+    Console.WriteLine("lower case");
+}
+//-----------------------------------------------------------------------------
+
+//•Write a program to create a simple calculator (* /+-) using switch statement.
+Console.WriteLine("enter the first number please: ");
+string q = Console.ReadLine();
+double num1 = Convert.ToDouble(q);
+
+Console.WriteLine("enter the operator pleae: (* / + -) ");
+string o = Console.ReadLine();
+char ope = Convert.ToChar(o);
+
+Console.WriteLine("enter the second number please: ");
+string w = Console.ReadLine();
+double num2 = Convert.ToDouble(w);
+double resultoperation = 0;
+switch (ope)
+{
+    case '+':
+        result = num1 + num2;
+        Console.WriteLine($"{num1} + {num2} = {result}");
+        break;
+    case '-':
+        result = num1 - num2;
+        Console.WriteLine($"{num1} - {num2} = {result}");
+        break;
+    case '*':
+        result = num1 * num2;
+        Console.WriteLine($"{num1} * {num2} = {result}");
+        break;
+    case '/':
+        result = num1 / num2;
+        Console.WriteLine($"{num1} / {num2} = {result}");
+        break;
+
+}
+
+//-----------------------------------------------------------------------------
+//•Write a program to take 3 numbers from the keyboard and find the maximum number using ternary operator.
+Console.WriteLine("enter the hree numbers and press enter after each: ");
+string z = Console.ReadLine();
+string c = Console.ReadLine();
+string v = Console.ReadLine();
+int firstnumber = Convert.ToInt32(z);
+int secondnumber = Convert.ToInt32(c);
+int thirdnumber = Convert.ToInt32(v);
+
+Console.WriteLine("the largest number is " + ((firstnumber > secondnumber) ? ((firstnumber > thirdnumber) ? firstnumber : thirdnumber): ((secondnumber > thirdnumber) ? secondnumber : thirdnumber)));
+
+//-----------------------------------------------------------------------------
+//•Write a program to takes a number from the keyboard and check if  the number is odd or even using Ternary operator.
+Console.WriteLine("enter the number to check if it is odd or even: ");
+string m = Console.ReadLine();
+int checkednumber = Convert.ToInt32(m);
+Console.WriteLine(checkednumber >= 0 ? "even":"odd");
