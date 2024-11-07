@@ -1,0 +1,94 @@
+using System;
+using System.ComponentModel.DataAnnotations;
+class Program
+{
+    static void Main()
+    {
+       // Jagged();
+        Fibonacci(12);
+    }
+    public static void Jagged()
+    {
+        int[][] studentScores = new int[3][];
+        studentScores[0] = new int[] { 85, 90, 78 };         // Student 1
+        studentScores[1] = new int[] { 92, 88 };             // Student 2
+        studentScores[2] = new int[] { 76, 81, 85, 90 };     // Student 3
+        for (int i = 0; i < studentScores.Length; i++)
+        {
+            int sum = 0;
+            for (int j = 0; j < studentScores[i].Length; j++)
+            {
+                sum += studentScores[i][j];
+            }
+            double average = (double)sum / studentScores[i].Length;
+            Console.WriteLine($"Student {i + 1} Average Score: {average:F2}");
+        }
+    }
+
+    public static void Fibonacci(int x) //where x numbers of terms in the sequence. 
+    {
+        int first = 0;
+        int second = 1;
+        Console.Write($"{first}, {second} ,");
+        for (int i = 2; i < x; i++)
+        {
+            int next = first + second;
+            Console.Write($" {next} , ");
+            first = second;
+            second = next;
+            
+        }
+    }
+
+    public static void Calculator()
+    {
+        try
+        {
+            Console.WriteLine("enter the first number please: ");
+            string q = Console.ReadLine();
+            double num1 = Convert.ToDouble(q);
+
+            Console.WriteLine("enter the operator pleae: (* / + -) ");
+            string o = Console.ReadLine();
+            char ope = Convert.ToChar(o);
+
+            Console.WriteLine("enter the second number please: ");
+            string w = Console.ReadLine();
+            double num2 = Convert.ToDouble(w);
+            double result = 0;
+            switch (ope)
+            {
+                case '+':
+                    result = num1 + num2;
+                    Console.WriteLine($"{num1} + {num2} = {result}");
+                    break;
+                case '-':
+                    result = num1 - num2;
+                    Console.WriteLine($"{num1} - {num2} = {result}");
+                    break;
+                case '*':
+                    result = num1 * num2;
+                    Console.WriteLine($"{num1} * {num2} = {result}");
+                    break;
+                case '/':
+                    result = num1 / num2;
+                    Console.WriteLine($"{num1} / {num2} = {result}");
+                    break;
+
+            }
+
+        }
+        catch (ValidationException ex)
+        {
+            Console.WriteLine("Enter numbers only please. ");
+        }
+        catch (DivideByZeroException ex)
+        {
+            Console.WriteLine("can not divide by zero. ");
+        }
+        finally
+        {
+            Console.WriteLine("Happy to user our Calculator.");
+        }
+    }
+}
