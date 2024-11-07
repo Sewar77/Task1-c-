@@ -4,8 +4,9 @@ class Program
 {
     static void Main()
     {
-       // Jagged();
+        Jagged();
         Fibonacci(12);
+        Calculator();
     }
     public static void Jagged()
     {
