@@ -94,7 +94,7 @@ char ope = Convert.ToChar(o);
 Console.WriteLine("enter the second number please: ");
 string w = Console.ReadLine();
 double num2 = Convert.ToDouble(w);
-double resultoperation = 0;
+double result = 0;
 switch (ope)
 {
     case '+':
