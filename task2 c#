@@ -5,9 +5,15 @@ class Program
     static void Main()
     {
         Jagged();
-        Fibonacci(12);
         Calculator();
+        int terms = 10; // Number of Fibonacci terms to display
+        Console.Write("Fibonacci Sequence: ");
+        for (int i = 0; i < terms; i++)
+        {
+            Console.Write(Fibonacci(i) + " ");
+        }
     }
+
     public static void Jagged()
     {
         int[][] studentScores = new int[3][];
@@ -26,19 +32,12 @@ class Program
         }
     }
 
-    public static void Fibonacci(int x) //where x numbers of terms in the sequence. 
+    public static int Fibonacci(int n)
     {
-        int first = 0;
-        int second = 1;
-        Console.Write($"{first}, {second} ,");
-        for (int i = 2; i < x; i++)
-        {
-            int next = first + second;
-            Console.Write($" {next} , ");
-            first = second;
-            second = next;
-            
-        }
+        if (n == 0) return 0;
+        if (n == 1) return 1;
+
+        return Fibonacci(n - 1) + Fibonacci(n - 2);
     }
 
     public static void Calculator()
